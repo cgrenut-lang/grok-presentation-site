@@ -1,2 +1,17 @@
-# grok-presentation-site
-Site web de présentation de Grok by xAI — animations 3D, design cosmique, scroll animations
+# Grok Presentation Site
+
+Site web ultra-animé présentant Grok by xAI.
+
+## Stack
+- HTML / CSS / JS
+- Three.js (fond 3D cosmique)
+- GSAP + ScrollTrigger
+- Tailwind CSS (CDN)
+
+## Live
+Déployé sur Vercel.
+
+## Lancer localement
+```bash
+python3 -m http.server 8080
+```

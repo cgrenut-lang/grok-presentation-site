@@ -1,0 +1,91 @@
+/* ===== Base & Smooth ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== Navbar scroll state ===== */
+#navbar.scrolled {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: white;
+}
+
+/* ===== Custom scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #22d3ee);
+  border-radius: 4px;
+}
+
+/* ===== Canvas background ===== */
+#bg-canvas {
+  opacity: 0.7;
+}
+
+/* ===== Pipeline steps hover ===== */
+.pipeline-step {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pipeline-step:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+/* ===== Chat bubble animation ===== */
+.chat-bubble {
+  animation: fadeInUp 0.6s ease both;
+}
+.chat-bubble:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Glow effects ===== */
+.hero-title {
+  text-shadow: 0 0 80px rgba(167, 139, 250, 0.3);
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* Progressive enhancement: if GSAP fails, show content after short delay */
+@keyframes forceShow {
+  to { opacity: 1 !important; transform: none !important; }
+}
+.hero-badge, .hero-title, .hero-subtitle, .hero-desc, .hero-cta,
+.section-label, .section-title, .about-content p, .about-content .flex,
+.about-visual, .creator-card, .how-card, #arch-visual,
+.feature-card, .timeline-item, .cta-title, .cta-desc, .cta-btn {
+  animation: forceShow 0.01s 1.8s forwards;
+}
